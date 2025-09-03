@@ -1,6 +1,6 @@
 //Maya ASCII 2025ff03 scene
 //Name: LotionBottle.ma
-//Last modified: Wed, Sep 03, 2025 05:35:48 PM
+//Last modified: Wed, Sep 03, 2025 05:37:56 PM
 //Codeset: 1252
 requires maya "2025ff03";
 requires -nodeType "aiOptions" -nodeType "aiAOVDriver" -nodeType "aiAOVFilter" -nodeType "aiImagerDenoiserOidn"
@@ -11,17 +11,17 @@ fileInfo "product" "Maya 2025";
 fileInfo "version" "2025";
 fileInfo "cutIdentifier" "202409190603-cbdc5a7e54";
 fileInfo "osv" "Windows 10 Home v2009 (Build: 19045)";
-fileInfo "UUID" "09763E19-4E1B-1BC0-5465-1DB27642B33B";
+fileInfo "UUID" "4562016F-4143-1E1C-FF36-7EA54BBF9A4B";
 createNode transform -s -n "persp";
 	rename -uid "122CC5DC-431B-1588-3BBA-D5964A280D7C";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 24.662800904567522 12.522611485879064 53.058512087540763 ;
-	setAttr ".r" -type "double3" -0.93835272989684371 -2133.3999999999469 -1.3894741211973445e-16 ;
+	setAttr ".t" -type "double3" 23.712190445127863 27.882895014841612 44.163231756646795 ;
+	setAttr ".r" -type "double3" -20.738352729270492 -2130.9999999993443 9.091250332919806e-16 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "A2CD19E3-47E4-8A25-3F4B-26AAB5F1C6F2";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 58.838741524490771;
+	setAttr ".coi" 60.989831291533378;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -78,8 +78,8 @@ createNode camera -s -n "sideShape" -p "side";
 	setAttr ".ai_translator" -type "string" "orthographic";
 createNode transform -n "LotionBottle";
 	rename -uid "0DDD0F44-4425-8E45-B1AB-B9B8DCF20ECE";
-	setAttr ".rp" -type "double3" -0.21309995651245117 11.099716347250256 1.7774577140808105 ;
-	setAttr ".sp" -type "double3" -0.21309995651245117 11.099716347250256 1.7774577140808105 ;
+	setAttr ".rp" -type "double3" -4.1551113128662109 0.025110829621553421 -3.1197638511657715 ;
+	setAttr ".sp" -type "double3" -4.1551113128662109 0.025110829621553421 -3.1197638511657715 ;
 createNode mesh -n "LotionBottleShape" -p "LotionBottle";
 	rename -uid "328D6C9C-4400-72D0-FB9D-E695AFF9AC2F";
 	setAttr -k off ".v";
@@ -113,6 +113,7 @@ createNode mesh -n "LotionBottleShape" -p "LotionBottle";
 	setAttr ".gtag[10].gtagcmp" -type "componentList" 39 "f[0:6]" "f[9:24]" "f[35:58]" "f[60]" "f[62]" "f[64]" "f[66]" "f[68]" "f[70]" "f[72]" "f[75:76]" "f[79]" "f[81]" "f[83]" "f[85]" "f[87]" "f[89]" "f[91:113]" "f[174:193]" "f[196:197]" "f[200:201]" "f[204:205]" "f[208:209]" "f[212:213]" "f[216:217]" "f[220:221]" "f[224:225]" "f[228:229]" "f[232:233]" "f[236:237]" "f[240:241]" "f[244:245]" "f[248:249]" "f[252:253]" "f[256:257]" "f[260:261]" "f[264:265]" "f[268:269]" "f[272:273]";
 	setAttr ".gtag[11].gtagnm" -type "string" "top";
 	setAttr ".gtag[11].gtagcmp" -type "componentList" 71 "f[8]" "f[30:34]" "f[77:78]" "f[80]" "f[82]" "f[84]" "f[86]" "f[88]" "f[90]" "f[134:173]" "f[194:195]" "f[198:199]" "f[202:203]" "f[206:207]" "f[210:211]" "f[214:215]" "f[218:219]" "f[222:223]" "f[226:227]" "f[230:231]" "f[234:235]" "f[238:239]" "f[242:243]" "f[246:247]" "f[250:251]" "f[254:255]" "f[258:259]" "f[262:263]" "f[266:267]" "f[270:271]" "f[274:373]" "f[401:403]" "f[413:415]" "f[425:427]" "f[434:435]" "f[442:443]" "f[450:451]" "f[462:463]" "f[472:473]" "f[478:479]" "f[488:489]" "f[494:497]" "f[518]" "f[524:525]" "f[548]" "f[554]" "f[560]" "f[575:577]" "f[580:581]" "f[590:591]" "f[596:598]" "f[604]" "f[612:613]" "f[622:623]" "f[685]" "f[687:689]" "f[691]" "f[693]" "f[706]" "f[708:709]" "f[718]" "f[720:721]" "f[730]" "f[732]" "f[739:740]" "f[752:753]" "f[755:757]" "f[760]" "f[785:786]" "f[797:798]" "f[800:801]";
+	setAttr ".pv" -type "double2" 0.57499992847442627 0.49999980628490448 ;
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
 	setAttr -s 1061 ".uvst[0].uvsp";
 	setAttr ".uvst[0].uvsp[0:249]" -type "float2" 0.40000001 0.35053235 0.375
@@ -2783,6 +2784,7 @@ createNode mesh -n "LotionBottleShape" -p "LotionBottle";
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".dr" 1;
 createNode lightLinker -s -n "lightLinker1";
 	rename -uid "38E789AF-410C-006A-3FE2-BEBC3D19EB19";
 	setAttr -s 4 ".lnk";
