@@ -1,6 +1,6 @@
 //Maya ASCII 2025ff03 scene
 //Name: ballBounceAnimation.ma
-//Last modified: Fri, Sep 05, 2025 02:22:21 PM
+//Last modified: Fri, Sep 05, 2025 02:28:09 PM
 //Codeset: 1252
 requires maya "2025ff03";
 requires "mtoa" "5.4.5";
@@ -10,7 +10,7 @@ fileInfo "product" "Maya 2025";
 fileInfo "version" "2025";
 fileInfo "cutIdentifier" "202409190603-cbdc5a7e54";
 fileInfo "osv" "Windows 10 Home v2009 (Build: 19045)";
-fileInfo "UUID" "61FED849-47BB-DFE0-CF92-1D83FE7AA094";
+fileInfo "UUID" "46DFC71E-4CF5-C8A0-80E4-70AA614FC7F8";
 createNode transform -s -n "persp";
 	rename -uid "D2EA320A-4B63-D812-C84A-2DBB6C852BF5";
 	setAttr ".v" no;
@@ -299,8 +299,8 @@ createNode animCurveTU -n "pSphere1_scaleZ";
 	setAttr -s 26 ".kox[9:25]"  1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1;
 	setAttr -s 26 ".koy[9:25]"  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
 select -ne :time1;
-	setAttr ".o" 1;
-	setAttr ".unw" 1;
+	setAttr ".o" 74;
+	setAttr ".unw" 74;
 select -ne :hardwareRenderingGlobals;
 	setAttr ".otfna" -type "stringArray" 22 "NURBS Curves" "NURBS Surfaces" "Polygons" "Subdiv Surface" "Particles" "Particle Instance" "Fluids" "Strokes" "Image Planes" "UI" "Lights" "Cameras" "Locators" "Joints" "IK Handles" "Deformers" "Motion Trails" "Components" "Hair Systems" "Follicles" "Misc. UI" "Ornaments"  ;
 	setAttr ".otfva" -type "Int32Array" 22 0 1 1 1 1 1
