@@ -1,6 +1,6 @@
 //Maya ASCII 2025ff03 scene
 //Name: ballBounceAnimation.ma
-//Last modified: Fri, Sep 05, 2025 01:44:29 PM
+//Last modified: Fri, Sep 05, 2025 01:54:45 PM
 //Codeset: 1252
 requires maya "2025ff03";
 requires "mtoa" "5.4.5";
@@ -10,17 +10,17 @@ fileInfo "product" "Maya 2025";
 fileInfo "version" "2025";
 fileInfo "cutIdentifier" "202409190603-cbdc5a7e54";
 fileInfo "osv" "Windows 10 Home v2009 (Build: 19045)";
-fileInfo "UUID" "EBB891E3-4C09-EB3B-5979-F880D7853BAC";
+fileInfo "UUID" "55225F24-42C5-48DD-B67C-98BE106F83DD";
 createNode transform -s -n "persp";
 	rename -uid "D2EA320A-4B63-D812-C84A-2DBB6C852BF5";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 11.730024808798845 32.166341474601246 60.573391541149327 ;
+	setAttr ".t" -type "double3" 7.667674876145707 20.588280239144936 39.674412880842354 ;
 	setAttr ".r" -type "double3" -28.538352729603961 11.000000000000229 8.100210383062127e-16 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "83734C99-42DF-2883-B47D-18ADAC747F0F";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 69.378754844945774;
+	setAttr ".coi" 45.144038052887538;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -211,21 +211,21 @@ createNode animCurveTL -n "pSphere1_translateX";
 	rename -uid "A72C0FDA-4DB4-F2BB-95B8-00B41DEA45C2";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 12 ".ktv[0:11]"  1 0 10 0 17.999994217687075 0 19 0 20 0
-		 21 0 22 0 23 0 24 0 25 0 26 0 44 0;
+	setAttr -s 12 ".ktv[0:11]"  1 0 10 0 19 0 20 0 21 0 22 0 23 0 24 0 25 0
+		 26 0 30 0 44 0;
 createNode animCurveTL -n "pSphere1_translateZ";
 	rename -uid "827F3B8F-4509-5043-8171-D2BD9F4EB0A8";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 12 ".ktv[0:11]"  1 0 10 0 17.999994217687075 0 19 0 20 0
-		 21 0 22 0 23 0 24 0 25 0 26 0 44 0;
+	setAttr -s 12 ".ktv[0:11]"  1 0 10 0 19 0 20 0 21 0 22 0 23 0 24 0 25 0
+		 26 0 30 0 44 0;
 createNode animCurveTL -n "pSphere1_translateY";
 	rename -uid "4D21D985-4E62-CC72-5347-8D8B8EBFE0AF";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 12 ".ktv[0:11]"  1 15 10 7.4 17.999994217687075 7.5 19 1.0547731659969433
-		 20 0.99181925502374479 21 0.57675240885996448 22 0.85 23 1.3810928650452516 24 2.8433731260827142
-		 25 2.803419222623929 26 4.4989146454089788 44 15;
+	setAttr -s 12 ".ktv[0:11]"  1 15 10 7.4 19 1.0547731659969433 20 0.99181925502374479
+		 21 0.57675240885996448 22 0.85 23 1.3810928650452516 24 2.8433731260827142 25 2.803419222623929
+		 26 4.4989146454089788 30 7.5 44 15;
 createNode polySphere -n "polySphere1";
 	rename -uid "3B2A66A2-4545-AD66-DA97-75A83577D81C";
 select -ne :time1;
