@@ -1,6 +1,6 @@
 //Maya ASCII 2025ff03 scene
 //Name: ballBounceAnimation.ma
-//Last modified: Fri, Sep 05, 2025 01:22:04 PM
+//Last modified: Fri, Sep 05, 2025 01:44:29 PM
 //Codeset: 1252
 requires maya "2025ff03";
 requires "mtoa" "5.4.5";
@@ -10,17 +10,17 @@ fileInfo "product" "Maya 2025";
 fileInfo "version" "2025";
 fileInfo "cutIdentifier" "202409190603-cbdc5a7e54";
 fileInfo "osv" "Windows 10 Home v2009 (Build: 19045)";
-fileInfo "UUID" "B2F15E88-4D05-F33B-276F-7DB3949AEEBF";
+fileInfo "UUID" "EBB891E3-4C09-EB3B-5979-F880D7853BAC";
 createNode transform -s -n "persp";
 	rename -uid "D2EA320A-4B63-D812-C84A-2DBB6C852BF5";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 104.77527272497122 78.808648083624377 98.35503624615508 ;
-	setAttr ".r" -type "double3" -29.138352729603803 46.999999999999872 2.3317905641093053e-15 ;
+	setAttr ".t" -type "double3" 11.730024808798845 32.166341474601246 60.573391541149327 ;
+	setAttr ".r" -type "double3" -28.538352729603961 11.000000000000229 8.100210383062127e-16 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "83734C99-42DF-2883-B47D-18ADAC747F0F";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 163.86216814232043;
+	setAttr ".coi" 69.378754844945774;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -87,6 +87,19 @@ createNode mesh -n "pSphereShape1" -p "pSphere1";
 	setAttr ".dcc" -type "string" "Ambient+Diffuse";
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "pPlane1";
+	rename -uid "D301AC5A-40F7-D634-9766-D7AE0D74D858";
+	setAttr ".s" -type "double3" 24.320305791822584 24.320305791822584 24.320305791822584 ;
+createNode mesh -n "pPlaneShape1" -p "pPlane1";
+	rename -uid "252D284D-4A8A-1190-2EE5-C6A7062BDBEF";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
 createNode lightLinker -s -n "lightLinker1";
 	rename -uid "957A9F45-406E-63C3-F495-9C8227FDC2AD";
 	setAttr -s 3 ".lnk";
@@ -105,8 +118,6 @@ createNode renderLayerManager -n "renderLayerManager";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "E2348728-4DCD-9680-0267-C1963431CB3C";
 	setAttr ".g" yes;
-createNode polySphere -n "polySphere1";
-	rename -uid "3B2A66A2-4545-AD66-DA97-75A83577D81C";
 createNode lambert -n "ballColor";
 	rename -uid "EC667B3D-44D9-6872-D413-69BECF9E9710";
 	setAttr ".c" -type "float3" 1 0 0 ;
@@ -128,21 +139,6 @@ createNode nodeGraphEditorInfo -n "hyperShadePrimaryNodeEditorSavedTabsInfo";
 	setAttr ".tgi[0].ni[1].x" 95.714286804199219;
 	setAttr ".tgi[0].ni[1].y" -18.571428298950195;
 	setAttr ".tgi[0].ni[1].nvs" 1923;
-createNode animCurveTL -n "pSphere1_translateX";
-	rename -uid "A72C0FDA-4DB4-F2BB-95B8-00B41DEA45C2";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  1 0;
-createNode animCurveTL -n "pSphere1_translateY";
-	rename -uid "4D21D985-4E62-CC72-5347-8D8B8EBFE0AF";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  1 15;
-createNode animCurveTL -n "pSphere1_translateZ";
-	rename -uid "827F3B8F-4509-5043-8171-D2BD9F4EB0A8";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  1 0;
 createNode script -n "uiConfigurationScriptNode";
 	rename -uid "367343B8-4F15-DBCF-7DD2-1683D9E14F97";
 	setAttr ".b" -type "string" (
@@ -190,9 +186,51 @@ createNode script -n "sceneConfigurationScriptNode";
 	rename -uid "0694C3EF-4DB7-BDCE-0F58-AC88BCD2912B";
 	setAttr ".b" -type "string" "playbackOptions -min 1 -max 120 -ast 1 -aet 200 ";
 	setAttr ".st" 6;
+createNode polyPlane -n "polyPlane1";
+	rename -uid "69CEDE31-4751-C78C-DDDC-D1A385F353AF";
+	setAttr ".cuv" 2;
+createNode animCurveTU -n "pSphere1_scaleY";
+	rename -uid "D4605244-4B39-6BB1-77A3-2DB12AE090C3";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 8 ".ktv[0:7]"  1 1 19 1 20 1 21 0.59382715811696196 22 0.82222222103790199
+		 23 1.3177142851947972 24 1.7209065938829176 44 1;
+createNode animCurveTU -n "pSphere1_scaleZ";
+	rename -uid "EB3A8B4E-45D0-790B-BC77-629F625853A9";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 8 ".ktv[0:7]"  1 1 19 1 20 1 21 1 22 1 23 0.86538699006424791
+		 24 0.72327726363984679 44 1;
+createNode animCurveTU -n "pSphere1_scaleX";
+	rename -uid "517258E4-4E41-AC53-1635-BB80CD519F8B";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 8 ".ktv[0:7]"  1 1 19 1 20 1.3555555579241967 21 1.8528395126504102
+		 22 1.488888892145769 23 0.96523531732986256 24 0.70757178965373169 44 1;
+createNode animCurveTL -n "pSphere1_translateX";
+	rename -uid "A72C0FDA-4DB4-F2BB-95B8-00B41DEA45C2";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 12 ".ktv[0:11]"  1 0 10 0 17.999994217687075 0 19 0 20 0
+		 21 0 22 0 23 0 24 0 25 0 26 0 44 0;
+createNode animCurveTL -n "pSphere1_translateZ";
+	rename -uid "827F3B8F-4509-5043-8171-D2BD9F4EB0A8";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 12 ".ktv[0:11]"  1 0 10 0 17.999994217687075 0 19 0 20 0
+		 21 0 22 0 23 0 24 0 25 0 26 0 44 0;
+createNode animCurveTL -n "pSphere1_translateY";
+	rename -uid "4D21D985-4E62-CC72-5347-8D8B8EBFE0AF";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 12 ".ktv[0:11]"  1 15 10 7.4 17.999994217687075 7.5 19 1.0547731659969433
+		 20 0.99181925502374479 21 0.57675240885996448 22 0.85 23 1.3810928650452516 24 2.8433731260827142
+		 25 2.803419222623929 26 4.4989146454089788 44 15;
+createNode polySphere -n "polySphere1";
+	rename -uid "3B2A66A2-4545-AD66-DA97-75A83577D81C";
 select -ne :time1;
-	setAttr ".o" 1;
-	setAttr ".unw" 1;
+	setAttr ".o" 10;
+	setAttr ".unw" 10;
 select -ne :hardwareRenderingGlobals;
 	setAttr ".otfna" -type "stringArray" 22 "NURBS Curves" "NURBS Surfaces" "Polygons" "Subdiv Surface" "Particles" "Particle Instance" "Fluids" "Strokes" "Image Planes" "UI" "Lights" "Cameras" "Locators" "Joints" "IK Handles" "Deformers" "Motion Trails" "Components" "Hair Systems" "Follicles" "Misc. UI" "Ornaments"  ;
 	setAttr ".otfva" -type "Int32Array" 22 0 1 1 1 1 1
@@ -236,7 +274,11 @@ select -ne :hardwareRenderGlobals;
 connectAttr "pSphere1_translateX.o" "pSphere1.tx";
 connectAttr "pSphere1_translateY.o" "pSphere1.ty";
 connectAttr "pSphere1_translateZ.o" "pSphere1.tz";
+connectAttr "pSphere1_scaleX.o" "pSphere1.sx";
+connectAttr "pSphere1_scaleY.o" "pSphere1.sy";
+connectAttr "pSphere1_scaleZ.o" "pSphere1.sz";
 connectAttr "polySphere1.out" "pSphereShape1.i";
+connectAttr "polyPlane1.out" "pPlaneShape1.i";
 relationship "link" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" "lambert2SG.message" ":defaultLightSet.message";
@@ -256,4 +298,5 @@ connectAttr "ballColor.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[
 connectAttr "lambert2SG.pa" ":renderPartition.st" -na;
 connectAttr "ballColor.msg" ":defaultShaderList1.s" -na;
 connectAttr "defaultRenderLayer.msg" ":defaultRenderingList1.r" -na;
+connectAttr "pPlaneShape1.iog" ":initialShadingGroup.dsm" -na;
 // End of ballBounceAnimation.ma
