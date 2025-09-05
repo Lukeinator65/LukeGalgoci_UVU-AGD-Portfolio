@@ -1,6 +1,6 @@
 //Maya ASCII 2025ff03 scene
 //Name: ballBounceAnimation.ma
-//Last modified: Fri, Sep 05, 2025 02:20:59 PM
+//Last modified: Fri, Sep 05, 2025 02:22:21 PM
 //Codeset: 1252
 requires maya "2025ff03";
 requires "mtoa" "5.4.5";
@@ -10,7 +10,7 @@ fileInfo "product" "Maya 2025";
 fileInfo "version" "2025";
 fileInfo "cutIdentifier" "202409190603-cbdc5a7e54";
 fileInfo "osv" "Windows 10 Home v2009 (Build: 19045)";
-fileInfo "UUID" "40520565-46F5-652B-0543-3C9465EA402F";
+fileInfo "UUID" "61FED849-47BB-DFE0-CF92-1D83FE7AA094";
 createNode transform -s -n "persp";
 	rename -uid "D2EA320A-4B63-D812-C84A-2DBB6C852BF5";
 	setAttr ".v" no;
@@ -185,7 +185,7 @@ createNode script -n "uiConfigurationScriptNode";
 	setAttr ".st" 3;
 createNode script -n "sceneConfigurationScriptNode";
 	rename -uid "0694C3EF-4DB7-BDCE-0F58-AC88BCD2912B";
-	setAttr ".b" -type "string" "playbackOptions -min 1 -max 120 -ast 1 -aet 200 ";
+	setAttr ".b" -type "string" "playbackOptions -min 1 -max 74 -ast 1 -aet 74 ";
 	setAttr ".st" 6;
 createNode polyPlane -n "polyPlane1";
 	rename -uid "69CEDE31-4751-C78C-DDDC-D1A385F353AF";
