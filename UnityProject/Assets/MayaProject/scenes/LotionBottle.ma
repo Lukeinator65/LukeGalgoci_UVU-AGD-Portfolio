@@ -1,6 +1,6 @@
 //Maya ASCII 2025ff03 scene
 //Name: LotionBottle.ma
-//Last modified: Tue, Sep 09, 2025 03:32:00 AM
+//Last modified: Tue, Sep 09, 2025 03:32:54 AM
 //Codeset: 1252
 requires maya "2025ff03";
 requires -nodeType "aiOptions" -nodeType "aiAOVDriver" -nodeType "aiAOVFilter" -nodeType "aiImagerDenoiserOidn"
@@ -11,7 +11,7 @@ fileInfo "product" "Maya 2025";
 fileInfo "version" "2025";
 fileInfo "cutIdentifier" "202409190603-cbdc5a7e54";
 fileInfo "osv" "Windows 10 Home v2009 (Build: 19045)";
-fileInfo "UUID" "0FDE100C-4892-9B88-4061-22A5CB8A9476";
+fileInfo "UUID" "3C4FB745-4F4A-B4BC-B512-73AFB82AB426";
 createNode transform -s -n "persp";
 	rename -uid "122CC5DC-431B-1588-3BBA-D5964A280D7C";
 	setAttr ".v" no;
