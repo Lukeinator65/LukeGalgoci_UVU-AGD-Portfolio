@@ -1,6 +1,6 @@
 //Maya ASCII 2025ff03 scene
 //Name: ModularSet.ma
-//Last modified: Thu, Sep 11, 2025 07:50:34 PM
+//Last modified: Thu, Sep 11, 2025 07:53:28 PM
 //Codeset: 1252
 requires maya "2025ff03";
 requires -nodeType "aiOptions" -nodeType "aiAOVDriver" -nodeType "aiAOVFilter" -nodeType "aiImagerDenoiserOidn"
@@ -11,17 +11,17 @@ fileInfo "product" "Maya 2025";
 fileInfo "version" "2025";
 fileInfo "cutIdentifier" "202409190603-cbdc5a7e54";
 fileInfo "osv" "Windows 10 Home v2009 (Build: 19045)";
-fileInfo "UUID" "E31BB4A9-4C74-0042-B6D3-8EB98615B617";
+fileInfo "UUID" "9B4E9FB5-4A3B-82DF-3222-86A1C8437E92";
 createNode transform -s -n "persp";
 	rename -uid "4E189C9B-4EFD-3EEE-1DAB-ED94D10D3F82";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 739.46700658732345 246.81232834150049 133.31376206849438 ;
-	setAttr ".r" -type "double3" -8.7383527294088701 -298.20000000000181 -1.6826523825142222e-15 ;
+	setAttr ".t" -type "double3" -388.24405992052147 326.30562574566102 966.66109988405094 ;
+	setAttr ".r" -type "double3" -9.338352729414316 -370.59999999994761 5.0558937513903211e-16 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "0EE15468-4277-5815-9EE9-D4B86CE6862F";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 878.77095867438982;
+	setAttr ".coi" 1498.3149087428042;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -105,7 +105,7 @@ createNode mesh -n "groundShape" -p "ground";
 	setAttr ".cdvm[0]"  0 1 1;
 createNode transform -n "wall1";
 	rename -uid "055203AA-48E9-CF6E-0C56-4A83C7DAFF4E";
-	setAttr ".t" -type "double3" 0 137.50000961804801 -279.016751768539 ;
+	setAttr ".t" -type "double3" -358.82019625230981 137.50000961804801 -279.016751768539 ;
 	setAttr ".r" -type "double3" 90 0 0 ;
 	setAttr ".s" -type "double3" 525 525 275 ;
 	setAttr ".rp" -type "double3" 0 0 137.50000961804801 ;
@@ -123,6 +123,29 @@ createNode mesh -n "wallShape1" -p "wall1";
 	setAttr ".dcc" -type "string" "Ambient+Diffuse";
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "pCylinder1";
+	rename -uid "A70AACF1-4343-E546-E38D-948921D90482";
+	setAttr ".t" -type "double3" 57.892775870929256 231.69236218846515 -326.27445029759826 ;
+	setAttr ".s" -type "double3" 34.579269088573774 34.579269088573774 34.579269088573774 ;
+createNode mesh -n "pCylinderShape1" -p "pCylinder1";
+	rename -uid "802087A5-421C-D3DC-0D9C-329C2E2746C7";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".pv" -type "double2" 0.49999998509883881 0.84374997019767761 ;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr -s 42 ".pt[0:41]" -type "float3"  0 -5.700326 0 0 -5.700326 
+		0 0 -5.700326 0 0 -5.700326 0 0 -5.700326 0 0 -5.700326 0 0 -5.700326 0 0 -5.700326 
+		0 0 -5.700326 0 0 -5.700326 0 0 -5.700326 0 0 -5.700326 0 0 -5.700326 0 0 -5.700326 
+		0 0 -5.700326 0 0 -5.700326 0 0 -5.700326 0 0 -5.700326 0 0 -5.700326 0 0 -5.700326 
+		0 0 0.25241622 0 0 0.25241622 0 0 0.25241622 0 0 0.25241622 0 0 0.25241622 0 0 0.25241622 
+		0 0 0.25241622 0 0 0.25241622 0 0 0.25241622 0 0 0.25241622 0 0 0.25241622 0 0 0.25241622 
+		0 0 0.25241622 0 0 0.25241622 0 0 0.25241622 0 0 0.25241622 0 0 0.25241622 0 0 0.25241622 
+		0 0 0.25241622 0 0 0.25241622 0 0 -5.700326 0 0 0.25241622 0;
 createNode lightLinker -s -n "lightLinker1";
 	rename -uid "4FE8366E-43AD-0156-8F4C-3EA5172B8CE0";
 	setAttr -s 2 ".lnk";
@@ -372,6 +395,10 @@ createNode polyExtrudeFace -n "polyExtrudeFace3";
 createNode deleteComponent -n "deleteComponent2";
 	rename -uid "B0470794-43CE-B0A9-C7B8-B6839BB280CE";
 	setAttr ".dc" -type "componentList" 2 "f[19]" "f[21]";
+createNode polyCylinder -n "polyCylinder1";
+	rename -uid "DCAB0807-4201-5702-FB63-D48FFF67810A";
+	setAttr ".sc" 1;
+	setAttr ".cuv" 3;
 select -ne :time1;
 	setAttr ".o" 1;
 	setAttr ".unw" 1;
@@ -394,7 +421,7 @@ select -ne :standardSurface1;
 	setAttr ".bc" -type "float3" 0.40000001 0.40000001 0.40000001 ;
 	setAttr ".sr" 0.5;
 select -ne :initialShadingGroup;
-	setAttr -s 3 ".dsm";
+	setAttr -s 4 ".dsm";
 	setAttr ".ro" yes;
 select -ne :initialParticleSE;
 	setAttr ".ro" yes;
@@ -421,6 +448,7 @@ select -ne :ikSystem;
 connectAttr "polyCube1.out" "pCubeShape1.i";
 connectAttr "polyPlane1.out" "groundShape.i";
 connectAttr "deleteComponent2.og" "wallShape1.i";
+connectAttr "polyCylinder1.out" "pCylinderShape1.i";
 relationship "link" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
@@ -463,4 +491,5 @@ connectAttr "defaultRenderLayer.msg" ":defaultRenderingList1.r" -na;
 connectAttr "pCubeShape1.iog" ":initialShadingGroup.dsm" -na;
 connectAttr "groundShape.iog" ":initialShadingGroup.dsm" -na;
 connectAttr "wallShape1.iog" ":initialShadingGroup.dsm" -na;
+connectAttr "pCylinderShape1.iog" ":initialShadingGroup.dsm" -na;
 // End of ModularSet.ma
