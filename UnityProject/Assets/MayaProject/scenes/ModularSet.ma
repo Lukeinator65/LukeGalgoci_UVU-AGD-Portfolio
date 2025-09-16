@@ -1,6 +1,6 @@
 //Maya ASCII 2025ff03 scene
 //Name: ModularSet.ma
-//Last modified: Mon, Sep 15, 2025 08:57:55 PM
+//Last modified: Mon, Sep 15, 2025 08:59:09 PM
 //Codeset: 1252
 requires maya "2025ff03";
 requires -nodeType "aiOptions" -nodeType "aiAOVDriver" -nodeType "aiAOVFilter" -nodeType "aiImagerDenoiserOidn"
@@ -11,7 +11,7 @@ fileInfo "product" "Maya 2025";
 fileInfo "version" "2025";
 fileInfo "cutIdentifier" "202409190603-cbdc5a7e54";
 fileInfo "osv" "Windows 10 Home v2009 (Build: 19045)";
-fileInfo "UUID" "9711DA04-48C4-555A-EBD8-98BABA8742F2";
+fileInfo "UUID" "96113B3D-4DC6-174D-A583-F9A20C91B8C4";
 createNode transform -s -n "persp";
 	rename -uid "4E189C9B-4EFD-3EEE-1DAB-ED94D10D3F82";
 	setAttr ".v" no;
@@ -123,11 +123,11 @@ createNode mesh -n "wallShape1" -p "wall1";
 	setAttr ".dcc" -type "string" "Ambient+Diffuse";
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
-createNode transform -n "pCylinder1";
+createNode transform -n "column1";
 	rename -uid "A70AACF1-4343-E546-E38D-948921D90482";
 	setAttr ".t" -type "double3" -85.067464807545463 231.69236218846515 -260.84542398614241 ;
 	setAttr ".s" -type "double3" 25.650538294598402 34.579269088573774 25.650538294598402 ;
-createNode mesh -n "pCylinderShape1" -p "pCylinder1";
+createNode mesh -n "columnShape1" -p "column1";
 	rename -uid "802087A5-421C-D3DC-0D9C-329C2E2746C7";
 	setAttr -k off ".v";
 	setAttr -s 2 ".iog[0].og";
@@ -1035,9 +1035,9 @@ select -ne :ikSystem;
 connectAttr "polyCube1.out" "pCubeShape1.i";
 connectAttr "polyPlane1.out" "groundShape.i";
 connectAttr "deleteComponent2.og" "wallShape1.i";
-connectAttr "polyDelEdge1.out" "pCylinderShape1.i";
-connectAttr "groupId1.id" "pCylinderShape1.iog.og[0].gid";
-connectAttr "set1.mwc" "pCylinderShape1.iog.og[0].gco";
+connectAttr "polyDelEdge1.out" "columnShape1.i";
+connectAttr "groupId1.id" "columnShape1.iog.og[0].gid";
+connectAttr "set1.mwc" "columnShape1.iog.og[0].gco";
 relationship "link" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
@@ -1086,23 +1086,23 @@ connectAttr "polySplit18.out" "polySplit19.ip";
 connectAttr "polySplit19.out" "polySplit20.ip";
 connectAttr "polySplit20.out" "polySplit21.ip";
 connectAttr "polySplit21.out" "polyExtrudeFace4.ip";
-connectAttr "pCylinderShape1.wm" "polyExtrudeFace4.mp";
+connectAttr "columnShape1.wm" "polyExtrudeFace4.mp";
 connectAttr "polyTweak5.out" "polyExtrudeFace5.ip";
-connectAttr "pCylinderShape1.wm" "polyExtrudeFace5.mp";
+connectAttr "columnShape1.wm" "polyExtrudeFace5.mp";
 connectAttr "polyExtrudeFace4.out" "polyTweak5.ip";
 connectAttr "polyTweak6.out" "polySoftEdge2.ip";
-connectAttr "pCylinderShape1.wm" "polySoftEdge2.mp";
+connectAttr "columnShape1.wm" "polySoftEdge2.mp";
 connectAttr "polyExtrudeFace5.out" "polyTweak6.ip";
 connectAttr "polyTweak7.out" "polyExtrudeFace6.ip";
-connectAttr "pCylinderShape1.wm" "polyExtrudeFace6.mp";
+connectAttr "columnShape1.wm" "polyExtrudeFace6.mp";
 connectAttr "polySoftEdge2.out" "polyTweak7.ip";
 connectAttr "polyTweak8.out" "polySplit22.ip";
 connectAttr "polyExtrudeFace6.out" "polyTweak8.ip";
 connectAttr "polyTweak9.out" "polyExtrudeFace7.ip";
-connectAttr "pCylinderShape1.wm" "polyExtrudeFace7.mp";
+connectAttr "columnShape1.wm" "polyExtrudeFace7.mp";
 connectAttr "polySplit22.out" "polyTweak9.ip";
 connectAttr "groupId1.msg" "set1.gn" -na;
-connectAttr "pCylinderShape1.iog.og[0]" "set1.dsm" -na;
+connectAttr "columnShape1.iog.og[0]" "set1.dsm" -na;
 connectAttr "polyExtrudeFace7.out" "groupParts1.ig";
 connectAttr "groupId1.id" "groupParts1.gi";
 connectAttr "groupParts1.og" "polyTweak10.ip";
@@ -1112,5 +1112,5 @@ connectAttr "defaultRenderLayer.msg" ":defaultRenderingList1.r" -na;
 connectAttr "pCubeShape1.iog" ":initialShadingGroup.dsm" -na;
 connectAttr "groundShape.iog" ":initialShadingGroup.dsm" -na;
 connectAttr "wallShape1.iog" ":initialShadingGroup.dsm" -na;
-connectAttr "pCylinderShape1.iog" ":initialShadingGroup.dsm" -na;
+connectAttr "columnShape1.iog" ":initialShadingGroup.dsm" -na;
 // End of ModularSet.ma
