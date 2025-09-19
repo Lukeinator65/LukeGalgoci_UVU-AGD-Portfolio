@@ -1,6 +1,6 @@
 //Maya ASCII 2025ff03 scene
 //Name: ball_rig.ma
-//Last modified: Thu, Sep 18, 2025 08:36:34 PM
+//Last modified: Fri, Sep 19, 2025 03:56:50 PM
 //Codeset: 1252
 requires maya "2025ff03";
 requires "stereoCamera" "10.0";
@@ -14,17 +14,17 @@ fileInfo "product" "Maya 2025";
 fileInfo "version" "2025";
 fileInfo "cutIdentifier" "202409190603-cbdc5a7e54";
 fileInfo "osv" "Windows 10 Home v2009 (Build: 19045)";
-fileInfo "UUID" "CCD4CDA3-4037-9196-873C-C5A11A49C0F5";
+fileInfo "UUID" "EB8F1713-4957-9729-09F6-C58761C72A95";
 createNode transform -s -n "persp";
 	rename -uid "19F1B2F5-48F6-C5EE-57FD-DAB2CB4F84A0";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 198.69592229931266 197.67323708131525 1377.6211317414688 ;
+	setAttr ".t" -type "double3" 160.33191127980089 162.07845770058972 1111.3933388039572 ;
 	setAttr ".r" -type "double3" -7.538352729583484 -351.80000000001104 0 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "8DCAB9C0-4616-342F-0A06-D1A72C8C6E24";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 1403.2968944785682;
+	setAttr ".coi" 1131.9741652555149;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -49,13 +49,13 @@ createNode camera -s -n "topShape" -p "top";
 createNode transform -s -n "front";
 	rename -uid "5871448B-4E27-87CB-1A30-72BB40F79D2E";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 1.2945421629199647 15.20811590245124 1000.1 ;
+	setAttr ".t" -type "double3" 13.727256690220305 113.53958534564475 1000.1 ;
 createNode camera -s -n "frontShape" -p "front";
 	rename -uid "4FEB16A5-4F26-1375-047F-1C9A2A553474";
 	setAttr -k off ".v" no;
 	setAttr ".rnd" no;
 	setAttr ".coi" 1000.1;
-	setAttr ".ow" 889.87164087343842;
+	setAttr ".ow" 1014.7237880184852;
 	setAttr ".imn" -type "string" "front";
 	setAttr ".den" -type "string" "front_depth";
 	setAttr ".man" -type "string" "front_mask";
@@ -1275,6 +1275,7 @@ createNode parentConstraint -n "Ball_Geo_parentConstraint1" -p "Ball_Geo";
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
 	setAttr ".tg[0].tot" -type "double3" 0 -10 0 ;
+	setAttr ".lr" -type "double3" 0 0 -187.59259259259258 ;
 	setAttr -k on ".w0";
 createNode scaleConstraint -n "Ball_Geo_scaleConstraint1" -p "Ball_Geo";
 	rename -uid "834C231D-4A9E-024A-6202-EB84AC572D35";
@@ -1450,6 +1451,7 @@ createNode parentConstraint -n "Squash_Ctrl_Grp_parentConstraint1" -p "Squash_Ct
 	setAttr ".erp" yes;
 	setAttr -s 2 ".tg";
 	setAttr ".tg[0].tot" -type "double3" 0 10 0 ;
+	setAttr ".lr" -type "double3" 0 0 -172.40740740740742 ;
 	setAttr ".int" 0;
 	setAttr -k on ".w0";
 	setAttr -k on ".w1";
@@ -1489,7 +1491,7 @@ createNode parentConstraint -n "Ball_Def_Squash_Handle_parentConstraint1" -p "Ba
 	setAttr -k off ".sy";
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
-	setAttr ".lr" -type "double3" 0 0 7.0000000000000018 ;
+	setAttr ".lr" -type "double3" 0 0 -26.833333333333325 ;
 	setAttr -k on ".w0";
 createNode scaleConstraint -n "Ball_Def_Squash_Handle_scaleConstraint1" -p "Ball_Def_Squash_Handle";
 	rename -uid "37F25837-40BB-2D44-1332-8E996BB3831E";
@@ -1523,20 +1525,20 @@ createNode mesh -n "pPlaneShape1" -p "pPlane1";
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "543B5665-4AC7-3222-2313-A994CF011DEE";
+	rename -uid "E3564C4B-4EE2-5F15-63C4-1FA2A1A4F5EF";
 	setAttr -s 3 ".lnk";
 	setAttr -s 3 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "0439EC4B-487A-8DFD-8BD8-8D903A3E8B7F";
+	rename -uid "E62BBA08-49F4-1A50-6F22-009D17619760";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "7FD9C1A9-4EB7-041C-3A0C-DE9F5D237199";
+	rename -uid "7D2C3635-465A-1646-DADA-4B9852AF80C3";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "EEBFFB2C-402A-8177-0078-FA88B92674C5";
+	rename -uid "1E6789D7-43FD-592D-B18D-7DAEEB2E844B";
 createNode displayLayer -n "defaultLayer";
 	rename -uid "223580E7-4E0E-97E0-7BCD-5CB29D7A0E88";
 	setAttr ".ufem" -type "stringArray" 0  ;
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "CFA69412-4E69-CD21-1C42-838F83D51829";
+	rename -uid "7711FBE7-4CFC-0127-8D5C-689F12562742";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "D0AFB7B6-4700-B284-564B-CF867C956FE1";
 	setAttr ".g" yes;
@@ -1744,14 +1746,14 @@ createNode animCurveTL -n "Transform_Ctrl_translateX";
 	rename -uid "5B1038DC-42A7-35F1-BF38-7AA7FD00F6F0";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 8 ".ktv[0:7]"  1 -170 9 -106.32653061224494 15 -65 16 -65
-		 17 -60 25 115 30 160 31 160;
+	setAttr -s 9 ".ktv[0:8]"  1 -170 9 -106.32653061224494 15 -65 16 -65
+		 17 -60 19 -20 25 115 30 160 31 160;
 createNode animCurveTL -n "Transform_Ctrl_translateY";
 	rename -uid "6CA0943C-46A6-7266-DD64-72838A93FB1A";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 9 ".ktv[0:8]"  1 200 9 144.86861477344718 15 0 16 0 17 6
-		 22 125 25 100 30 0 31 0;
+	setAttr -s 10 ".ktv[0:9]"  1 200 9 144.86861477344718 15 0 16 0 17 6
+		 19 85 22 125 25 100 30 0 31 0;
 createNode animCurveTA -n "COG_Ctrl_rotateX";
 	rename -uid "43A19D15-4AC4-C1A6-1E4C-D08E3F074A31";
 	setAttr ".tan" 18;
@@ -1772,13 +1774,13 @@ createNode animCurveTA -n "Squash_Ctrl_rotateZ";
 	rename -uid "D9E6D21D-41EA-334B-489B-42B97FCD5B78";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 11 ".ktv[0:10]"  1 0 6 29.999999999999996 15 0 16 8 17 -8
-		 18 -20 20 -29.999999999999996 22 0 25 29.999999999999996 29 14.999999999999998 31 7;
+	setAttr -s 11 ".ktv[0:10]"  1 0 6 29.999999999999996 15 0 16 0 17 -8
+		 18 -20 20 -29.999999999999996 22 0 25 29.999999999999996 29 14.999999999999998 31 0;
 createNode animCurveTU -n "Squash_Ctrl_Squash";
 	rename -uid "7EDB75D0-459A-E365-8360-6EA9E5DC675E";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 10 ".ktv[0:9]"  1 0 6 0.2 15 0 16 -0.5 17 0.5 22 0 23 0
+	setAttr -s 10 ".ktv[0:9]"  1 0 6 0.2 15 0 16 -0.7 17 0.5 22 0 23 0
 		 25 0.2 30 0 31 -0.5;
 select -ne :time1;
 	setAttr ".o" 1;
