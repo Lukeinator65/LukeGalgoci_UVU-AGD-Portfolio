@@ -1,6 +1,6 @@
 //Maya ASCII 2025ff03 scene
 //Name: ball_rig.ma
-//Last modified: Fri, Sep 19, 2025 03:56:50 PM
+//Last modified: Fri, Sep 19, 2025 08:08:37 PM
 //Codeset: 1252
 requires maya "2025ff03";
 requires "stereoCamera" "10.0";
@@ -14,7 +14,7 @@ fileInfo "product" "Maya 2025";
 fileInfo "version" "2025";
 fileInfo "cutIdentifier" "202409190603-cbdc5a7e54";
 fileInfo "osv" "Windows 10 Home v2009 (Build: 19045)";
-fileInfo "UUID" "EB8F1713-4957-9729-09F6-C58761C72A95";
+fileInfo "UUID" "4D1235FD-4A96-8398-61EB-B5B044946C3F";
 createNode transform -s -n "persp";
 	rename -uid "19F1B2F5-48F6-C5EE-57FD-DAB2CB4F84A0";
 	setAttr ".v" no;
@@ -55,7 +55,7 @@ createNode camera -s -n "frontShape" -p "front";
 	setAttr -k off ".v" no;
 	setAttr ".rnd" no;
 	setAttr ".coi" 1000.1;
-	setAttr ".ow" 1014.7237880184852;
+	setAttr ".ow" 1209.9966887567675;
 	setAttr ".imn" -type "string" "front";
 	setAttr ".den" -type "string" "front_depth";
 	setAttr ".man" -type "string" "front_mask";
@@ -1275,7 +1275,7 @@ createNode parentConstraint -n "Ball_Geo_parentConstraint1" -p "Ball_Geo";
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
 	setAttr ".tg[0].tot" -type "double3" 0 -10 0 ;
-	setAttr ".lr" -type "double3" 0 0 -187.59259259259258 ;
+	setAttr ".lr" -type "double3" 0 0 -390 ;
 	setAttr -k on ".w0";
 createNode scaleConstraint -n "Ball_Geo_scaleConstraint1" -p "Ball_Geo";
 	rename -uid "834C231D-4A9E-024A-6202-EB84AC572D35";
@@ -1451,7 +1451,7 @@ createNode parentConstraint -n "Squash_Ctrl_Grp_parentConstraint1" -p "Squash_Ct
 	setAttr ".erp" yes;
 	setAttr -s 2 ".tg";
 	setAttr ".tg[0].tot" -type "double3" 0 10 0 ;
-	setAttr ".lr" -type "double3" 0 0 -172.40740740740742 ;
+	setAttr ".lr" -type "double3" 0 0 30.000000000000011 ;
 	setAttr ".int" 0;
 	setAttr -k on ".w0";
 	setAttr -k on ".w1";
@@ -1474,7 +1474,7 @@ createNode transform -n "Ball_Def_Squash_Handle" -p "Deformers";
 createNode deformSquash -n "Ball_Def_Squash_HandleShape" -p "Ball_Def_Squash_Handle";
 	rename -uid "3B37BB6C-424C-6106-832D-AC9DC1A16D70";
 	setAttr -k off ".v";
-	setAttr ".dd" -type "doubleArray" 7 -1 1 0 0 0.5 1 0 ;
+	setAttr ".dd" -type "doubleArray" 7 -1 1 0 0 0.5 1 0.5 ;
 	setAttr ".hw" 11.000001049041749;
 createNode parentConstraint -n "Ball_Def_Squash_Handle_parentConstraint1" -p "Ball_Def_Squash_Handle";
 	rename -uid "1C5DFF31-475A-29F6-8385-45915EB5614B";
@@ -1491,7 +1491,7 @@ createNode parentConstraint -n "Ball_Def_Squash_Handle_parentConstraint1" -p "Ba
 	setAttr -k off ".sy";
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
-	setAttr ".lr" -type "double3" 0 0 -26.833333333333325 ;
+	setAttr ".lr" -type "double3" 0 0 -14.999999999999998 ;
 	setAttr -k on ".w0";
 createNode scaleConstraint -n "Ball_Def_Squash_Handle_scaleConstraint1" -p "Ball_Def_Squash_Handle";
 	rename -uid "37F25837-40BB-2D44-1332-8E996BB3831E";
@@ -1525,20 +1525,20 @@ createNode mesh -n "pPlaneShape1" -p "pPlane1";
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "E3564C4B-4EE2-5F15-63C4-1FA2A1A4F5EF";
+	rename -uid "D7AE4354-4605-518C-6454-ADB7EF2C312A";
 	setAttr -s 3 ".lnk";
 	setAttr -s 3 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "E62BBA08-49F4-1A50-6F22-009D17619760";
+	rename -uid "6B786978-4BCB-F8AB-00C7-98AAA184FBF8";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "7D2C3635-465A-1646-DADA-4B9852AF80C3";
+	rename -uid "53666920-4786-53C0-68ED-2C8B165800E1";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "1E6789D7-43FD-592D-B18D-7DAEEB2E844B";
+	rename -uid "FE454D1D-4F2B-F70E-EBD2-878126C62A5D";
 createNode displayLayer -n "defaultLayer";
 	rename -uid "223580E7-4E0E-97E0-7BCD-5CB29D7A0E88";
 	setAttr ".ufem" -type "stringArray" 0  ;
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "7711FBE7-4CFC-0127-8D5C-689F12562742";
+	rename -uid "E88A90BA-4F0E-BD2C-DF88-A09347DDAA42";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "D0AFB7B6-4700-B284-564B-CF867C956FE1";
 	setAttr ".g" yes;
@@ -1746,14 +1746,14 @@ createNode animCurveTL -n "Transform_Ctrl_translateX";
 	rename -uid "5B1038DC-42A7-35F1-BF38-7AA7FD00F6F0";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 9 ".ktv[0:8]"  1 -170 9 -106.32653061224494 15 -65 16 -65
-		 17 -60 19 -20 25 115 30 160 31 160;
+	setAttr -s 14 ".ktv[0:13]"  1 -170 9 -106.32653061224494 15 -65 16 -65
+		 17 -60 19 -20 25 115 30 160 31 160 32 165 40 250 45 350 46 350 47 355;
 createNode animCurveTL -n "Transform_Ctrl_translateY";
 	rename -uid "6CA0943C-46A6-7266-DD64-72838A93FB1A";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 10 ".ktv[0:9]"  1 200 9 144.86861477344718 15 0 16 0 17 6
-		 19 85 22 125 25 100 30 0 31 0;
+	setAttr -s 15 ".ktv[0:14]"  1 200 9 144.86861477344718 15 0 16 0 17 6
+		 19 85 22 125 25 100 30 0 31 0 32 6 40 80 45 0 46 0 47 6;
 createNode animCurveTA -n "COG_Ctrl_rotateX";
 	rename -uid "43A19D15-4AC4-C1A6-1E4C-D08E3F074A31";
 	setAttr ".tan" 18;
@@ -1774,17 +1774,18 @@ createNode animCurveTA -n "Squash_Ctrl_rotateZ";
 	rename -uid "D9E6D21D-41EA-334B-489B-42B97FCD5B78";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 11 ".ktv[0:10]"  1 0 6 29.999999999999996 15 0 16 0 17 -8
-		 18 -20 20 -29.999999999999996 22 0 25 29.999999999999996 29 14.999999999999998 31 0;
+	setAttr -s 12 ".ktv[0:11]"  1 0 6 29.999999999999996 15 0 16 0 17 -8
+		 18 -20 20 -29.999999999999996 22 0 25 29.999999999999996 29 14.999999999999998 31 0
+		 32 -14.999999999999998;
 createNode animCurveTU -n "Squash_Ctrl_Squash";
 	rename -uid "7EDB75D0-459A-E365-8360-6EA9E5DC675E";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 10 ".ktv[0:9]"  1 0 6 0.2 15 0 16 -0.7 17 0.5 22 0 23 0
-		 25 0.2 30 0 31 -0.5;
+	setAttr -s 11 ".ktv[0:10]"  1 0 6 0.2 15 0 16 -0.7 17 0.5 22 0 23 0
+		 25 0.2 30 0 31 -0.5 32 0.5;
 select -ne :time1;
-	setAttr ".o" 1;
-	setAttr ".unw" 1;
+	setAttr ".o" 47;
+	setAttr ".unw" 47;
 select -ne :hardwareRenderingGlobals;
 	setAttr ".otfna" -type "stringArray" 22 "NURBS Curves" "NURBS Surfaces" "Polygons" "Subdiv Surface" "Particles" "Particle Instance" "Fluids" "Strokes" "Image Planes" "UI" "Lights" "Cameras" "Locators" "Joints" "IK Handles" "Deformers" "Motion Trails" "Components" "Hair Systems" "Follicles" "Misc. UI" "Ornaments"  ;
 	setAttr ".otfva" -type "Int32Array" 22 0 1 1 1 1 1
