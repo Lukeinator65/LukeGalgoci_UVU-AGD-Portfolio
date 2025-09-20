@@ -179,7 +179,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65180f705bb904ee98a80edc6dcf0d55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameActionHandler
-  action: {fileID: 11400000, guid: 250d90a0d99e4418598835030a603af3, type: 2}
+  action: {fileID: 11400000, guid: 52838b026d31f624e937b9f609b51d64, type: 2}
   startEvent:
     m_PersistentCalls:
       m_Calls: []
