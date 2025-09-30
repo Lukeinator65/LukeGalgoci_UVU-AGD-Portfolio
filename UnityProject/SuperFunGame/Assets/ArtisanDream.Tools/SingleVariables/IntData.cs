@@ -44,7 +44,6 @@ public class IntData : ScriptableObject
 
     public void CheckValueRange()
     {
-        Debug.Log(message:$"Checking value range: {value} (min: {minValue}, max: {maxValue})");
         if (value >= minValue && value <= maxValue) return;
         valueOutOfRange.Invoke();
         Value = Mathf.Clamp(Value, minValue, maxValue);
