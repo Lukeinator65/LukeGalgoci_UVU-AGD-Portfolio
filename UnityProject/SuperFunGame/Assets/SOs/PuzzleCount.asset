@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6df0c6962af14c60b2d5c35ebd9c64c, type: 3}
   m_Name: PuzzleCount
   m_EditorClassIdentifier: Assembly-CSharp::IntData
-  value: 0
+  value: 1
   minValue: 0
-  maxValue: 3
+  maxValue: 2
   valueOutOfRange:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11400000, guid: b4ee47e2d2895904c81b7f3c5fe538fa, type: 2}
+      - m_Target: {fileID: 11400000, guid: cd455a5609fc12b4ea57a024ec52e45e, type: 2}
         m_TargetAssemblyTypeName: GameAction, Assembly-CSharp
         m_MethodName: RaiseAction
         m_Mode: 1
