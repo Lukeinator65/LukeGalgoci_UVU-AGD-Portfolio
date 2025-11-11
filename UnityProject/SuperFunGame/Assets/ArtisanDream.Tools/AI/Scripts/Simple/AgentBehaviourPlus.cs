@@ -1,72 +1,57 @@
-﻿using System.Collections;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
 [RequireComponent(typeof(NavMeshAgent))]
-public class AgentBehaviourPlus : MonoBehaviour
+public class AgentBehaviourPlus : AgentBehaviour
 {
-    [SerializeField] // Make this field private and serialized to apply encapsulation.
-    private Transform destination;
-
-    private NavMeshAgent agent;
-    private Coroutine routine;
-    private readonly WaitForFixedUpdate waitObj;
-
-    private void Awake()
+    public List<Transform> patrolPointTransforms;
+    private List<Vector3> patrolPoints;
+    
+    private int currentPatrolIndex = 0;
+    private bool isPatrolling = true;
+    
+    // Covert Transform list to Vector3 list for patrol points
+    protected override void Start()
     {
-        EnsureDestinationNotNull();
-        RetrieveNavMeshAgentComponent();
-    }
-
-    private void Start()
-    {
-        EnsureDestinationNotNull();
-        StartUpdatingAgentDestination();
-    }
-
-    private void RetrieveNavMeshAgentComponent()
-    {
-        agent = GetComponent<NavMeshAgent>();
-    }
-
-    private void StartUpdatingAgentDestination()
-    {
-        routine = StartCoroutine(UpdateDestinationCoroutine()); // Store the Coroutine.
-    }
-
-    private void EnsureDestinationNotNull()
-    {
-        if (destination == null)
+        base.Start();
+        patrolPoints = new List<Vector3>();
+        foreach (var point in patrolPointTransforms)
         {
-            Debug.LogError("Destination is not assigned in AgentBehaviourPlus script on " + gameObject.name);
+            patrolPoints.Add(point.position);
+        }
+        if (patrolPoints.Count > 0)
+        {
+            agent.destination = patrolPoints[currentPatrolIndex];
+        }
+    }
+    
+    protected override void Update()
+    {
+        if (isPatrolling)
+        {
+            if (agent.pathPending || !(agent.remainingDistance < 0.5f)) return;
+            currentPatrolIndex = (currentPatrolIndex + 1) % patrolPoints.Count;
+            agent.destination = patrolPoints[currentPatrolIndex];
+        }
+        else
+        {
+            base.Update();
         }
     }
 
-    private IEnumerator UpdateDestinationCoroutine()
+    private void OnTriggerEnter(Collider other)
     {
-        while (true)
+        if (other.CompareTag("Player"))
         {
-            yield return waitObj;
-            agent.destination = destination.position;
+            isPatrolling = false;
         }
     }
-
-    public void RestartAgent()
+        
+    private void OnTriggerExit(Collider other)
     {
-        if (routine != null)
-        {
-            StopCoroutine(routine);
-        }
-
-        routine = StartCoroutine(UpdateDestinationCoroutine()); // Restart the Coroutine.
-    }
-
-    public void StopAgent()
-    {
-        if (routine != null)
-        {
-            StopCoroutine(routine);
-            routine = null;
-        }
+        if (!other.CompareTag("Player")) return;
+        isPatrolling = true;
+        agent.destination = patrolPoints[currentPatrolIndex];
     }
 }

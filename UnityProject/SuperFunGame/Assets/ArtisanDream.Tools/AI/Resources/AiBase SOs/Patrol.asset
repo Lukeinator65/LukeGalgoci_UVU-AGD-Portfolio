@@ -9,6 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 305be732fbccf440185390f6b0dc567a, type: 3}
-  m_Name: SendPlayer
-  m_EditorClassIdentifier: Assembly-CSharp::GameActionAdvanced
+  m_Script: {fileID: 11500000, guid: 1b89473f90dcc4eebb5a5356247960e2, type: 3}
+  m_Name: Patrol
+  m_EditorClassIdentifier: 
+  speed: 3.5
+  angularSpeed: 120
+  handler: {fileID: 11400000, guid: e4ba1f2c59d1f43e78ca2dd76ade8c02, type: 2}
+  patrolPoints: []
