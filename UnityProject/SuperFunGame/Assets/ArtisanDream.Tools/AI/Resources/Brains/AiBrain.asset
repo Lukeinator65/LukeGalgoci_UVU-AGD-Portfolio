@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6b72c68dee764417933c1d8573165cb, type: 3}
   m_Name: AiBrain
   m_EditorClassIdentifier: 
-  aiBaseObj: {fileID: 11400000, guid: a613becc6028f4351b6cba1129cf6536, type: 2}
+  aiBaseObj: {fileID: 11400000, guid: bc955bc8a33f74ea494c45bbe6d60fca, type: 2}
