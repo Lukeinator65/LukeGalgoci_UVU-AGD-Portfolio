@@ -1,6 +1,6 @@
 //Maya ASCII 2025ff03 scene
 //Name: SurfacedPropsRendered.ma
-//Last modified: Fri, Dec 05, 2025 04:00:37 PM
+//Last modified: Fri, Dec 05, 2025 05:59:16 PM
 //Codeset: 1252
 file -rdi 1 -ns "sideTable" -rfn "sideTableRN" -op "v=0;" -typ "mayaAscii" "C:/Users/Luke/Documents/UVU/LukeGalgoci_UVU-AGD-Portfolio/UnityProject/Assets/MayaProject//scenes/sideTable.ma";
 file -rdi 2 -ns "sixFootMan" -rfn "sideTable:sixFootManRN" -op "mo=1" -typ "OBJ"
@@ -8,8 +8,12 @@ file -rdi 2 -ns "sixFootMan" -rfn "sideTable:sixFootManRN" -op "mo=1" -typ "OBJ"
 file -rdi 1 -ns "Candle" -rfn "CandleRN" -op "v=0;" -typ "mayaAscii" "C:/Users/Luke/Documents/UVU/LukeGalgoci_UVU-AGD-Portfolio/UnityProject/Assets/MayaProject//scenes/Candle.ma";
 file -rdi 2 -ns "sixFootMan" -rfn "Candle:sixFootManRN" -op "mo=1" -typ "OBJ"
 		 "C:/Users/Luke/Documents/UVU/LukeGalgoci_UVU-AGD-Portfolio/UnityProject/Assets/MayaProject//scenes/sixFootMan.obj";
+file -rdi 1 -ns "LotionBottle" -rfn "LotionBottleRN" -op "v=0;" -typ "mayaAscii"
+		 "C:/Users/Luke/Documents/UVU/LukeGalgoci_UVU-AGD-Portfolio/UnityProject/Assets/MayaProject//scenes/LotionBottle.ma";
 file -r -ns "sideTable" -dr 1 -rfn "sideTableRN" -op "v=0;" -typ "mayaAscii" "C:/Users/Luke/Documents/UVU/LukeGalgoci_UVU-AGD-Portfolio/UnityProject/Assets/MayaProject//scenes/sideTable.ma";
 file -r -ns "Candle" -dr 1 -rfn "CandleRN" -op "v=0;" -typ "mayaAscii" "C:/Users/Luke/Documents/UVU/LukeGalgoci_UVU-AGD-Portfolio/UnityProject/Assets/MayaProject//scenes/Candle.ma";
+file -r -ns "LotionBottle" -dr 1 -rfn "LotionBottleRN" -op "v=0;" -typ "mayaAscii"
+		 "C:/Users/Luke/Documents/UVU/LukeGalgoci_UVU-AGD-Portfolio/UnityProject/Assets/MayaProject//scenes/LotionBottle.ma";
 requires maya "2025ff03";
 requires "stereoCamera" "10.0";
 requires -nodeType "aiOptions" -nodeType "aiAOVDriver" -nodeType "aiAOVFilter" -nodeType "aiStandardSurface"
@@ -21,17 +25,17 @@ fileInfo "product" "Maya 2025";
 fileInfo "version" "2025";
 fileInfo "cutIdentifier" "202505300603-a12e894a3d";
 fileInfo "osv" "Windows 10 Home v2009 (Build: 19045)";
-fileInfo "UUID" "C66F85FC-4E93-484E-5391-778D8910C3F2";
+fileInfo "UUID" "B83E57C5-4F2D-950A-1FFF-68B339949B94";
 createNode transform -s -n "persp";
 	rename -uid "8B2006A5-4641-3935-1661-FD87D93B2B13";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 201.43736979701598 123.95968561302652 211.23717942768869 ;
-	setAttr ".r" -type "double3" -15.938352729604395 45.000000000002281 1.1244958915987806e-15 ;
+	setAttr ".t" -type "double3" 366.99493402826693 223.07360180792463 480.17120035983345 ;
+	setAttr ".r" -type "double3" -15.938352729724624 37.800000000003159 1.0063071902502252e-15 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "BF332553-4FC2-063C-2ED3-B3A88029C1D3";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 315.56112535197815;
+	setAttr ".coi" 641.01372282051432;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -96,10 +100,69 @@ createNode mesh -n "pPlaneShape1" -p "pPlane1";
 	setAttr ".dcc" -type "string" "Ambient+Diffuse";
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "areaLight1";
+	rename -uid "6A22D272-4D05-BEA5-B6A7-3BBF393F073B";
+	setAttr ".t" -type "double3" 0 215 0 ;
+	setAttr ".r" -type "double3" -90 0 0 ;
+	setAttr ".s" -type "double3" 110 110 110 ;
+createNode areaLight -n "areaLightShape1" -p "areaLight1";
+	rename -uid "0B6670AF-4449-5508-C52E-789D86CCC381";
+	setAttr -k off ".v";
+createNode transform -n "areaLight2";
+	rename -uid "2255F27C-4E6D-D449-4981-D7989637E294";
+	setAttr ".t" -type "double3" -1.1858601506303028 153.89134243201747 94.460896196829452 ;
+	setAttr ".r" -type "double3" -34.594253520797096 -1.1309566949447207 -2.0230280909905e-14 ;
+	setAttr ".s" -type "double3" 59.051925698497442 59.051925698497442 59.051925698497442 ;
+createNode areaLight -n "areaLightShape2" -p "areaLight2";
+	rename -uid "3A6A3F6F-4C01-534A-1B03-9D82B8DE6BB3";
+	setAttr -k off ".v";
+	setAttr ".in" 75;
+	setAttr ".col" 112.07428461788359;
+	setAttr ".ai_exposure" 9;
+createNode transform -n "areaLight3";
+	rename -uid "BD6FA3D8-4DAF-2237-2A4F-D9834FDAD73C";
+	setAttr ".t" -type "double3" 137.63891484255205 81.803297667287197 -47.740827024895637 ;
+	setAttr ".r" -type "double3" 0.28864288185151327 109.05117566823121 -2.5444437451708135e-12 ;
+	setAttr ".s" -type "double3" 59.051925698497442 59.051925698497442 59.051925698497442 ;
+createNode areaLight -n "areaLightShape3" -p "areaLight3";
+	rename -uid "C459A1BC-4741-1FEB-C17A-FD86219CE682";
+	setAttr -k off ".v";
+	setAttr ".in" 45;
+	setAttr ".col" 144.5516503337943;
+	setAttr ".ai_exposure" 6;
+createNode transform -n "areaLight4";
+	rename -uid "F306C7DB-49C0-608A-2F67-B395113DE8A7";
+	setAttr ".t" -type "double3" -96.820500231325013 80.637032787229558 -102.77677534510114 ;
+	setAttr ".r" -type "double3" 4.9308417780290839 -136.45843155384091 0 ;
+	setAttr ".s" -type "double3" 59.051925698497442 59.051925698497442 59.051925698497442 ;
+createNode areaLight -n "areaLightShape4" -p "areaLight4";
+	rename -uid "DB5AAFA7-4A4D-91F5-CE4E-038C9138227F";
+	setAttr -k off ".v";
+	setAttr ".in" 70;
+	setAttr ".col" 141.23787755232917;
+	setAttr ".ai_exposure" 9;
+createNode transform -n "camera1";
+	rename -uid "3658E4A5-49F1-B8B1-117F-06A9AF574429";
+	setAttr ".t" -type "double3" 132.00443872824539 146.68057378396156 168.59493136425627 ;
+	setAttr ".r" -type "double3" -24.000000000000156 38.800000000000125 0 ;
+	setAttr ".s" -type "double3" 19.435667889147581 19.435667889147581 19.435667889147581 ;
+createNode camera -n "cameraShape1" -p "camera1";
+	rename -uid "F3C0337C-449E-FA71-7B77-2A8B96C0EB8E";
+	setAttr -k off ".v";
+	setAttr ".rnd" no;
+	setAttr ".cap" -type "double2" 1.41732 0.94488 ;
+	setAttr ".ff" 0;
+	setAttr ".ovr" 1.3;
+	setAttr ".coi" 256.59173864710158;
+	setAttr ".ow" 30;
+	setAttr ".imn" -type "string" "camera1";
+	setAttr ".den" -type "string" "camera1_depth";
+	setAttr ".man" -type "string" "camera1_mask";
+	setAttr ".dr" yes;
 createNode lightLinker -s -n "lightLinker1";
 	rename -uid "C2AF4AB2-4176-952B-557C-35A09B15CDD2";
-	setAttr -s 4 ".lnk";
-	setAttr -s 4 ".slnk";
+	setAttr -s 6 ".lnk";
+	setAttr -s 6 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
 	rename -uid "7CC6B5B6-48E4-24FD-256F-B797FF926568";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
@@ -130,6 +193,7 @@ createNode reference -n "sideTableRN";
 lockNode -l 1 ;
 createNode aiOptions -s -n "defaultArnoldRenderOptions";
 	rename -uid "45B0E561-40B2-9679-F5FE-0DAB250AA9C3";
+	addAttr -ci true -sn "ARV_options" -ln "ARV_options" -dt "string";
 	setAttr ".version" -type "string" "5.4.8.2";
 createNode aiAOVFilter -s -n "defaultArnoldFilter";
 	rename -uid "C5C9E7A3-43CD-9651-AC8B-58BAFDB47A69";
@@ -316,12 +380,26 @@ createNode script -n "sceneConfigurationScriptNode";
 	rename -uid "09400D35-40CA-AE2A-B781-99B13F87B120";
 	setAttr ".b" -type "string" "playbackOptions -min 1 -max 74 -ast 1 -aet 74 ";
 	setAttr ".st" 6;
+createNode reference -n "LotionBottleRN";
+	rename -uid "2C0461E1-4DB1-5F92-A07A-7EB36CF23180";
+	setAttr ".ed" -type "dataReferenceEdits" 
+		"LotionBottleRN"
+		"LotionBottleRN" 0
+		"LotionBottleRN" 4
+		2 "|LotionBottle:LotionBottle" "translate" " -type \"double3\" -11.14971616080233829 76.92586268112063408 -21.5398510096549316"
+		
+		2 "|LotionBottle:LotionBottle" "rotate" " -type \"double3\" 0 38.74797693009545441 0"
+		
+		2 "|LotionBottle:LotionBottle" "scale" " -type \"double3\" 1 1 1"
+		2 "|LotionBottle:LotionBottle" "rotatePivotTranslate" " -type \"double3\" 0 0 0";
+	setAttr ".ptag" -type "string" "";
+lockNode -l 1 ;
 createNode nodeGraphEditorInfo -n "hyperShadePrimaryNodeEditorSavedTabsInfo";
-	rename -uid "5D1421B6-438F-2695-5FA8-7F9D7B039FD7";
+	rename -uid "5F6F4A31-4B5A-921F-A44E-CCAB8CBCAF55";
 	setAttr ".tgi[0].tn" -type "string" "Untitled_1";
-	setAttr ".tgi[0].vl" -type "double2" -44.047617297323995 -359.52379523761743 ;
-	setAttr ".tgi[0].vh" -type "double2" 732.1428280501151 44.047617297323995 ;
-	setAttr -s 22 ".tgi[0].ni";
+	setAttr ".tgi[0].vl" -type "double2" -1620.4848627685676 -1551.3430445591616 ;
+	setAttr ".tgi[0].vh" -type "double2" 2770.3113564104747 731.6016154127642 ;
+	setAttr -s 24 ".tgi[0].ni";
 	setAttr ".tgi[0].ni[0].x" 165.71427917480469;
 	setAttr ".tgi[0].ni[0].y" -227.14285278320312;
 	setAttr ".tgi[0].ni[0].nvs" 1923;
@@ -388,6 +466,12 @@ createNode nodeGraphEditorInfo -n "hyperShadePrimaryNodeEditorSavedTabsInfo";
 	setAttr ".tgi[0].ni[21].x" -252.85714721679688;
 	setAttr ".tgi[0].ni[21].y" 5.7142858505249023;
 	setAttr ".tgi[0].ni[21].nvs" 1923;
+	setAttr ".tgi[0].ni[22].x" 242.85714721679688;
+	setAttr ".tgi[0].ni[22].y" 92.857139587402344;
+	setAttr ".tgi[0].ni[22].nvs" 2066;
+	setAttr ".tgi[0].ni[23].x" 242.85714721679688;
+	setAttr ".tgi[0].ni[23].y" 92.857139587402344;
+	setAttr ".tgi[0].ni[23].nvs" 2066;
 select -ne :time1;
 	setAttr ".o" 1;
 	setAttr ".unw" 1;
@@ -399,31 +483,38 @@ select -ne :hardwareRenderingGlobals;
 	setAttr ".fprt" yes;
 	setAttr ".rtfm" 1;
 select -ne :renderPartition;
-	setAttr -s 4 ".st";
+	setAttr -s 6 ".st";
 select -ne :renderGlobalsList1;
 select -ne :defaultShaderList1;
-	setAttr -s 9 ".s";
+	setAttr -s 11 ".s";
 select -ne :postProcessList1;
 	setAttr -s 2 ".p";
 select -ne :defaultRenderUtilityList1;
-	setAttr -s 4 ".u";
+	setAttr -s 6 ".u";
 select -ne :defaultRenderingList1;
-	setAttr -s 3 ".r";
+	setAttr -s 4 ".r";
+select -ne :lightList1;
+	setAttr -s 4 ".l";
 select -ne :defaultTextureList1;
-	setAttr -s 12 ".tx";
+	setAttr -s 14 ".tx";
 select -ne :standardSurface1;
 	setAttr ".bc" -type "float3" 0.40000001 0.40000001 0.40000001 ;
 	setAttr ".sr" 0.5;
 select -ne :initialShadingGroup;
-	setAttr -s 4 ".dsm";
+	setAttr -s 3 ".dsm";
 	setAttr ".ro" yes;
 select -ne :initialParticleSE;
 	setAttr ".ro" yes;
 select -ne :defaultRenderGlobals;
 	addAttr -ci true -h true -sn "dss" -ln "defaultSurfaceShader" -dt "string";
+	setAttr ".ren" -type "string" "arnold";
+	setAttr ".outf" 51;
+	setAttr ".imfkey" -type "string" "exr";
 	setAttr ".dss" -type "string" "standardSurface1";
 select -ne :defaultResolution;
 	setAttr ".pa" 1;
+select -ne :defaultLightSet;
+	setAttr -s 4 ".dsm";
 select -ne :defaultColorMgtGlobals;
 	setAttr ".cfe" yes;
 	setAttr ".cfp" -type "string" "<MAYA_RESOURCES>/OCIO-configs/Maya2022-default/config.ocio";
@@ -783,6 +874,10 @@ connectAttr "file7.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[20].
 		;
 connectAttr "file11.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[21].dn"
 		;
+connectAttr "areaLightShape1.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[22].dn"
+		;
+connectAttr "areaLightShape2.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[23].dn"
+		;
 connectAttr "set1.pa" ":renderPartition.st" -na;
 connectAttr "set2.pa" ":renderPartition.st" -na;
 connectAttr "aiStandardSurface1.msg" ":defaultShaderList1.s" -na;
@@ -794,6 +889,10 @@ connectAttr "bump2d1.msg" ":defaultRenderUtilityList1.u" -na;
 connectAttr "place2dTexture2.msg" ":defaultRenderUtilityList1.u" -na;
 connectAttr "bump2d2.msg" ":defaultRenderUtilityList1.u" -na;
 connectAttr "defaultRenderLayer.msg" ":defaultRenderingList1.r" -na;
+connectAttr "areaLightShape1.ltd" ":lightList1.l" -na;
+connectAttr "areaLightShape2.ltd" ":lightList1.l" -na;
+connectAttr "areaLightShape3.ltd" ":lightList1.l" -na;
+connectAttr "areaLightShape4.ltd" ":lightList1.l" -na;
 connectAttr "file1.msg" ":defaultTextureList1.tx" -na;
 connectAttr "file2.msg" ":defaultTextureList1.tx" -na;
 connectAttr "file3.msg" ":defaultTextureList1.tx" -na;
@@ -807,4 +906,8 @@ connectAttr "file10.msg" ":defaultTextureList1.tx" -na;
 connectAttr "file11.msg" ":defaultTextureList1.tx" -na;
 connectAttr "file12.msg" ":defaultTextureList1.tx" -na;
 connectAttr "pPlaneShape1.iog" ":initialShadingGroup.dsm" -na;
+connectAttr "areaLight1.iog" ":defaultLightSet.dsm" -na;
+connectAttr "areaLight2.iog" ":defaultLightSet.dsm" -na;
+connectAttr "areaLight3.iog" ":defaultLightSet.dsm" -na;
+connectAttr "areaLight4.iog" ":defaultLightSet.dsm" -na;
 // End of SurfacedPropsRendered.ma
