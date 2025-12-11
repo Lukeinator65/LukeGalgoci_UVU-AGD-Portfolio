@@ -1,6 +1,6 @@
 //Maya ASCII 2025ff03 scene
 //Name: Mirai_Blockout.ma
-//Last modified: Wed, Dec 10, 2025 07:21:48 PM
+//Last modified: Wed, Dec 10, 2025 07:22:48 PM
 //Codeset: 1252
 file -rdi 1 -ns "sixFootMan" -rfn "sixFootManRN" -op "mo=1" -typ "OBJ" "C:/Users/Luke/Documents/UVU/LukeGalgoci_UVU-AGD-Portfolio/UnityProject/Assets/MayaProject//scenes/sixFootMan.obj";
 file -r -ns "sixFootMan" -dr 1 -rfn "sixFootManRN" -op "mo=1" -typ "OBJ" "C:/Users/Luke/Documents/UVU/LukeGalgoci_UVU-AGD-Portfolio/UnityProject/Assets/MayaProject//scenes/sixFootMan.obj";
@@ -13,17 +13,17 @@ fileInfo "product" "Maya 2025";
 fileInfo "version" "2025";
 fileInfo "cutIdentifier" "202505300603-a12e894a3d";
 fileInfo "osv" "Windows 10 Home v2009 (Build: 19045)";
-fileInfo "UUID" "60B9142C-4A08-7E32-C1B3-EFB25D9DD020";
+fileInfo "UUID" "5AB6B104-49C6-1A5A-B8BC-66A87DCED8B2";
 createNode transform -s -n "persp";
 	rename -uid "D78AB759-4515-824F-FD26-D88BBA6B64D5";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" -275.17668759516215 275.54041201701375 490.14112539785907 ;
+	setAttr ".t" -type "double3" -215.14344709277762 219.65801813064945 376.85453710020676 ;
 	setAttr ".r" -type "double3" -13.538541447956804 -10828.599262538717 0.00038923792644890496 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "C20869F3-4EEE-47D5-3802-97A7B82DDCEE";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 599.80503326055805;
+	setAttr ".coi" 462.08430837590527;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
